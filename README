@@ -1,0 +1,17 @@
+				sdlpathfinder
+
+		sdlpathfinder is a visual grid-based path finder
+
+This is mainly a project for me to learn SDL and C. If you have any
+recommendations on how I could improve, please send a pull request.
+
+CONTROLS:
+
+      s        Step the pathfinder once
+
+      q        Quit the application
+
+BUILD SYSTEM:
+
+      This project uses GNU Autotools. To generate the configure script, run
+      `autoreconf -i`. You can then follow the instructions in INSTALL.
