@@ -1,0 +1,26 @@
+dist: bionic
+
+language: c
+compiler:
+  - gcc
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install libsdl2-dev
+
+addons:
+  coverity_scan:
+    project:
+      name: "mat8913/sdlpathfinder"
+      description: "sdlpathfinder is a visual grid-based path finder"
+    notification_email: id@mbekkema.name
+    build_command_prepend: "autoreconf -i && ./configure"
+    build_command: "make"
+    branch_pattern: coverity_scan
+
+script:
+  - if [ ${COVERITY_SCAN_BRANCH} != 1 ]; then
+      autoreconf -i &&
+      ./configure &&
+      make;
+    fi
